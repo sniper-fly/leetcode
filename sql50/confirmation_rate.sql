@@ -3,5 +3,16 @@ select
   c.action,
   count(c.action = 'confirmed'),
   count(c.action = 'timeout')
-from Confirmations c
-group by c.user_id
+from
+  Confirmations c
+group by
+  c.user_id;
+
+select
+  s.user_id,
+  round(avg(if(c.action = 'confirmed', 1, 0)), 2) as confirmation_rate
+from
+  Signups s
+  left join Confirmations c on s.user_id = c.user_id
+group by
+  user_id
