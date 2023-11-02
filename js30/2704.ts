@@ -4,7 +4,22 @@ type ToBeOrNotToBe = {
 };
 
 function expect(val: any): ToBeOrNotToBe {
-  
+  return {
+    toBe: (v: any) => {
+      if (v === val) {
+        return true;
+      } else {
+        throw "Not Equal"
+      }
+    },
+    notToBe: (v: any) => {
+      if (v !== val) {
+        return true;
+      } else {
+        throw "Equal"
+      }
+    },
+  };
 }
 
 /**
