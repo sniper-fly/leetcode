@@ -22,11 +22,16 @@ function debounce(fn: F, t: number): F {
  * log('Hello'); // Logged at t=100ms
  */
 
-// async function a(t: number) {
-//   return new Promise((resolve) => {
-//     setTimeout(resolve, t);
-//   });
-// }
+async function a(t: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, t);
+  });
+}
+
+// a(1000).then(() => { console.log('a') })
+// console.log('b')
+// a(1000).then(() => { console.log('c') })
+// console.log('d')
 
 // async function main() {
 //   const timerId = setTimeout(() => {
