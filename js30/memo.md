@@ -20,3 +20,6 @@ t > cancelT
 const timerId = setTimeout(() => fn(...args), t);
 で予約した関数が実行されず、cancel()が先に実行されるので
 配列は空
+
+2677. chunk
+slice を利用したもっとシンプルな実装も試す
