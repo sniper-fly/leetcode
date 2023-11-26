@@ -23,3 +23,11 @@ const timerId = setTimeout(() => fn(...args), t);
 
 2677. chunk
 slice を利用したもっとシンプルな実装も試す
+
+# sqliteのテスト環境設定
+
+まず適当にデータを用意する
+sqlite3 test.db < create_table.sql
+
+用意したスクリプトファイルで結果を出力する
+sqlite3 test.db < 177_nth_highest.sq
