@@ -1,3 +1,7 @@
+182. [sql] duplicate emails
+愚直な方法しかできなかったので、他におもいついた方法
+group byの利用、cross join, joinの利用 も試す
+
 2629. Function Composition
 reduceRight, reduce, call, bind, 再帰
 を使ったソリューションもやるべき
