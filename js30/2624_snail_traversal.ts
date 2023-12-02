@@ -11,12 +11,10 @@ Array.prototype.snail = function (
   if (rowsCount * colsCount !== this.length || rowsCount < 0 || colsCount < 0) {
     return [];
   }
-  const parent: number[][] = [];
 
   // rowsCount のぶんだけ配列をparentに追加する
-  for (let i = 0; i < rowsCount; ++i) {
-    parent.push([]);
-  }
+  const parent: number[][] = (new Array(rowsCount)).fill([])
+  console.log(parent)
 
   for (let i = 0; i < this.length; ) {
     // 下り
@@ -36,10 +34,10 @@ Array.prototype.snail = function (
 };
 
 
-// const nums = [19, 10, 3, 7, 9, 8, 5, 2, 1, 17, 16, 14, 12, 18, 6, 13, 11, 20, 4, 15]
-// const rowsCount = 5
-// const colsCount = 4
-// console.log(nums.snail(rowsCount, colsCount)); // [[1,2,3,4]]
+const nums = [19, 10, 3, 7, 9, 8, 5, 2, 1, 17, 16, 14, 12, 18, 6, 13, 11, 20, 4, 15]
+const rowsCount = 5
+const colsCount = 4
+console.log(nums.snail(rowsCount, colsCount)); // [[1,2,3,4]]
 
 
 export {};
