@@ -1,3 +1,6 @@
+# sql全般
+using句を使ってみよう!!
+
 601. or条件を沢山使うこと、order by の多用は速度低下の要因になりうる
 preceding, current row, following をウィンドウ関数で使う解法を一つ
 row_number でdiffをとる方法を一つ
