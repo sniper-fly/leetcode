@@ -1,12 +1,19 @@
 select
   p.product_name,
-  sum(o.unit) as unit
+  q.unit
 from
-  Orders o
+(
+    select
+      product_id,
+      sum(o.unit) as unit
+    from
+      Orders o
+    where
+      month(o.order_date) = 2
+      and year(o.order_date) = 2020
+    group by
+      o.product_id
+    having
+      sum(o.unit) >= 100
+  ) q
   join Products p using(product_id)
-where
-  month(o.order_date) = 2 and year(o.order_date) = 2020
-group by
-  o.product_id
-having
-  sum(o.unit) >= 100
