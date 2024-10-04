@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE InventoryAdjustments
@@ -9,7 +9,7 @@ CREATE TABLE InventoryAdjustments
  PRIMARY KEY (req_date, req_qty));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT cust_nbr, cust_name,
@@ -35,7 +35,7 @@ SELECT req_date, req_qty,
  ORDER BY req_date;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT A1.req_date, A1.req_qty,
@@ -46,7 +46,7 @@ SELECT A1.req_date, A1.req_qty,
  ORDER BY A1.req_date;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT req_date, req_qty,

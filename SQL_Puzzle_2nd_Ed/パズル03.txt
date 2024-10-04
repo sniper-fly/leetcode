@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì1
+â– ç­”ãˆãã®1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW Events
@@ -46,7 +46,7 @@ SELECT E1.proc_id,
  GROUP BY E1.proc_id;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì2
+â– ç­”ãˆãã®2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT P3.proc_id, MAX(ConcurrentProcs.tally)
@@ -64,7 +64,7 @@ SELECT P3.proc_id, MAX(ConcurrentProcs.tally)
  GROUP BY P3.proc_id;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì3
+â– ç­”ãˆãã®3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW Vprocs (id1, id2, total) AS
@@ -85,11 +85,11 @@ SELECT id1 AS proc_id, MAX(total) AS max_inst_count
  GROUP BY id1;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì4
+â– ç­”ãˆãã®4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT P1.proc_id, P1.anest_name, MAX(E1.ecount) AS maxops
-  FROM Procs AS P1, -- E1‚ÍŠe–ƒŒˆã‚Ìˆ’u‚ÌuŠÔŠ|‚¯‚¿”
+  FROM Procs AS P1, -- E1ã¯å„éº»é…”åŒ»ã®å‡¦ç½®ã®ç¬é–“æ›ã‘æŒã¡æ•°
        (SELECT P2.anest_name, P2.start_time, COUNT(*)
           FROM Procs AS P1, Procs AS P2
          WHERE P1.anest_name = P2.anest_name
@@ -104,7 +104,7 @@ SELECT P1.proc_id, P1.anest_name, MAX(E1.ecount) AS maxops
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì5
+â– ç­”ãˆãã®5
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT X.anest_name, MAX(X.proc_tally)

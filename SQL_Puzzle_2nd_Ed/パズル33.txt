@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Machines
@@ -28,7 +28,7 @@ CREATE TABLE ManufactHrs
  PRIMARY KEY (machine_name, manu_date, batch_nbr));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE ManufactHrsCosts
@@ -61,7 +61,7 @@ SELECT :mydate, M1.machine_name,
   FROM Machines AS M1;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT :mydate AS my_date, F.machine_name,

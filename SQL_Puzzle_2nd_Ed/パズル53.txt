@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Foobar
@@ -19,7 +19,7 @@ VALUES (1, 'RED', 8, 10, 12),
        (5, 'GRAY', NULL, NULL, NULL);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT (SELECT color FROM Foobar WHERE lvl = M.lc) AS color,
@@ -60,7 +60,7 @@ SELECT MIN(CASE WHEN Foobar.lvl = M.lc
        ON Foobar.lvl IN (M.lc, M.ll, M.lw, M.lh);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT COALESCE(F5.color, F4.color, F3.color, F2.color, F1.color)

@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Samples
@@ -54,7 +54,7 @@ SELECT fish_name, AVG(found_tally)
  GROUP BY fish_name;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 INSERT INTO Samples
@@ -67,7 +67,7 @@ SELECT DISTINCT M1.sample_id, M2.fish_name, 0
            AND M2.fish_name = M3.fish_name);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT fish_name, SUM(found_tally) /
@@ -83,7 +83,7 @@ SELECT fish_name, SUM(found_tally) /
  GROUP BY fish_name;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT COALESCE(fish_name, :my_fish_name),

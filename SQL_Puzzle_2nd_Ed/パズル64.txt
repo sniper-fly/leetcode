@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Boxes
@@ -10,7 +10,7 @@ CREATE TABLE Boxes
  high INTEGER NOT NULL);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT B1.box_id AS box1, B2.box_id AS box2
@@ -39,7 +39,7 @@ HAVING COUNT(*)
               WHERE B3.box_id = B1.box_id);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Boxes
@@ -58,7 +58,7 @@ INSERT INTO Boxes VALUES ('C', 'x', 10, 12);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
---1éüå≥ÇÃèÍçá
+--1Ê¨°ÂÖÉ„ÅÆÂ†¥Âêà
 SELECT B1.box_id, B2.box_id
   FROM Boxes AS B1, Boxes AS B2
  WHERE B1.box_id < B2.box_id
@@ -73,7 +73,7 @@ INSERT INTO Boxes VALUES ('C', 'y', 0, 4);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
--- 2éüå≥ÇÃèÍçáÅFëÊ1àƒ
+-- 2Ê¨°ÂÖÉ„ÅÆÂ†¥ÂêàÔºöÁ¨¨1Ê°à
 SELECT B1.box_id, B2.box_id
   FROM Boxes AS B1, Boxes AS B2
  WHERE B1.box_id < B2.box_id
@@ -83,7 +83,7 @@ SELECT B1.box_id, B2.box_id
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
--- 2éüå≥ÇÃèÍçáÅFëÊ2àƒ
+-- 2Ê¨°ÂÖÉ„ÅÆÂ†¥ÂêàÔºöÁ¨¨2Ê°à
 SELECT B1.box_id, B2.box_id
   FROM Boxes AS B1, Boxes AS B2
  WHERE B1.box_id < B2.box_id
@@ -95,11 +95,11 @@ HAVING COUNT(B1.dim) = 2;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
---3éüå≥ÇÃèÍçá
+--3Ê¨°ÂÖÉ„ÅÆÂ†¥Âêà
 INSERT INTO Boxes VALUES ('A', 'z', 0, 2);
 INSERT INTO Boxes VALUES ('B', 'z', 1, 3);
 INSERT INTO Boxes VALUES ('C', 'z', 0, 100);
-Ç‡Ç§Ç®ï™Ç©ÇËÇæÇÎÇ§Ç™ÅAHAVINGãÂÇéüÇÃÇÊÇ§Ç…ïœÇ¶ÇÈÅB
+„ÇÇ„ÅÜ„ÅäÂàÜ„Åã„Çä„Å†„Çç„ÅÜ„Åå„ÄÅHAVINGÂè•„ÇíÊ¨°„ÅÆ„Çà„ÅÜ„Å´Â§â„Åà„Çã„ÄÇ
 COUNT(B1.dim) = 3
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

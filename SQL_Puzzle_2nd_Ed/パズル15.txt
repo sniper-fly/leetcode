@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Salaries
@@ -20,7 +20,7 @@ VALUES ('Tom',   '1996-06-20', 500.00),
        ('Harry', '1996-09-20', 700.00);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW Salaries2 (emp_name, sal_date, sal_amt)
@@ -32,7 +32,7 @@ AS SELECT S0.emp_name, S0.sal_date, MAX(S0.sal_amt)
    HAVING COUNT(*) <= 2;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT S0.emp_name, S0.sal_date, S0.sal_amt, S1.sal_date,
@@ -56,7 +56,7 @@ SELECT S4.emp_name, MAX(S4.sal_date), MAX(S4.sal_amt),
 HAVING COUNT(*) = 1;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT B.emp_name, B.maxdate, Y.sal_amt, B.maxdate2, Z.sal_amt
@@ -74,12 +74,12 @@ SELECT B.emp_name, B.maxdate, Y.sal_amt, B.maxdate2, Z.sal_amt
          ON B.emp_name = Z.emp_name AND B.maxdate2 = Z.sal_date;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ4
+‚ñ†Á≠î„Åà„Åù„ÅÆ4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT S1.emp_name, S1.sal_date, S1.sal_amt, S2.sal_date,
        S2.sal_amt
-  FROM Salaries2 AS S1, salaries2 AS S2 -- ÉrÉÖÅ[ÇégÇ§
+  FROM Salaries2 AS S1, salaries2 AS S2 -- „Éì„É•„Éº„Çí‰Ωø„ÅÜ
  WHERE S1.emp_name = S2.emp_name
    AND S1.sal_date > S2.sal_date
 UNION ALL
@@ -89,7 +89,7 @@ SELECT emp_name, MAX(sal_date), MAX(sal_amt), NULL, NULL
 HAVING COUNT(*) = 1;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ5
+‚ñ†Á≠î„Åà„Åù„ÅÆ5
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT S1.emp_name, S1.sal_date AS curr_date,
@@ -112,7 +112,7 @@ SELECT S1.emp_name, S1.sal_date AS curr_date,
                      AND S3.sal_date > S1.sal_date);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ6
+‚ñ†Á≠î„Åà„Åù„ÅÆ6
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW SalaryHistory
@@ -142,7 +142,7 @@ SELECT S0.emp_name,S0.curr_date, S0.curr_amt,
                             OR S0.prev_date IS NULL);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ7
+‚ñ†Á≠î„Åà„Åù„ÅÆ7
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 WITH salaryRanks(emp_name, sal_date, sal_amt, pos)
@@ -158,7 +158,7 @@ SELECT C.emp_name, C.sal_date AS curr_date,
    AND P.pos = 2 WHERE C.pos = 1;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ8
+‚ñ†Á≠î„Åà„Åù„ÅÆ8
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT S1.emp_name,
@@ -178,14 +178,14 @@ SELECT S1.emp_name,
  GROUP BY S1.emp_name;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ9
+‚ñ†Á≠î„Åà„Åù„ÅÆ9
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 WITH CTE (emp_name, sal_date, sal_amt, rn)
 AS (SELECT emp_name, sal_date, sal_amt ,
            ROW_NUMBER() OVER (PARTITION BY emp_name
                               ORDER BY sal_date DESC) AS rn
-                              --çsÇ…òAî‘Çïtó^Ç∑ÇÈ
+                              --Ë°å„Å´ÈÄ£Áï™„Çí‰ªò‰∏é„Åô„Çã
       FROM Salaries)
 SELECT O.emp_name,
        O.sal_date AS curr_date, O.sal_amt AS curr_amt,

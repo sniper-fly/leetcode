@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Names
@@ -13,7 +13,7 @@ VALUES ('Al'), ('Ben'), ('Charlie'),
        ('Mike'), ('Neal');
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT N1.name AS name1, MIN(N2.name) AS name2
@@ -80,7 +80,7 @@ SELECT N1.name,
  GROUP BY N1.name;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT N3.name, MIN(N4.name), MIN(N5.name), MIN(N6.name),
@@ -107,10 +107,10 @@ SELECT N3.name, MIN(N4.name), MIN(N5.name), MIN(N6.name),
  GROUP BY N3.name;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
--- Ç±ÇÍÇÊÇËè„ÇÕìöÇ¶ÇªÇÃ1Ç∆ìØÇ∂
+-- „Åì„Çå„Çà„Çä‰∏ä„ÅØÁ≠î„Åà„Åù„ÅÆ1„Å®Âêå„Åò
 FROM (Names AS N1
       LEFT OUTER JOIN
       Names AS N2
@@ -124,10 +124,10 @@ FROM (Names AS N1
         LEFT OUTER JOIN
         Names AS N5
         ON N4.name < N5.name
--- Ç±ÇÍÇÊÇËâ∫Ç‡ìöÇ¶ÇªÇÃ1Ç∆ìØÇ∂
+-- „Åì„Çå„Çà„Çä‰∏ã„ÇÇÁ≠î„Åà„Åù„ÅÆ1„Å®Âêå„Åò
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ4
+‚ñ†Á≠î„Åà„Åù„ÅÆ4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 ...
@@ -140,11 +140,11 @@ FROM (Names AS N1
                    HAVING MOD(COUNT(B.name), 5) = 1)
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ5
+‚ñ†Á≠î„Åà„Åù„ÅÆ5
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT MAX(name1), MAX(name2), MAX(name3), MAX(name4), MAX(name5)
-  FROM ( -- ãêëÂÇ»ïõñ‚Ç¢çáÇÌÇπÇÃénÇ‹ÇË
+  FROM ( -- Â∑®Â§ß„Å™ÂâØÂïè„ÅÑÂêà„Çè„Åõ„ÅÆÂßã„Åæ„Çä
          SELECT (COUNT(*) - 1) / 5,
                 (SELECT MAX(N1.name)
                    FROM Names AS N3
@@ -185,10 +185,10 @@ SELECT MAX(name1), MAX(name2), MAX(name3), MAX(name4), MAX(name5)
  GROUP BY cnt;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ6
+‚ñ†Á≠î„Åà„Åù„ÅÆ6
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
---3óÒÇÃèÍçá
+--3Âàó„ÅÆÂ†¥Âêà
 SELECT FirstCol.name AS name1,
        MAX(CASE WHEN OtherCols.cnt = 2
                 THEN OtherCols.final_name
@@ -214,7 +214,7 @@ SELECT FirstCol.name AS name1,
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
---5óÒÇÃèÍçá
+--5Âàó„ÅÆÂ†¥Âêà
 SELECT FirstCol.name AS name1,
        MAX(CASE WHEN OtherCols.cnt = 2
                 THEN OtherCols.final_name
@@ -246,7 +246,7 @@ ORDER BY FirstCol.name;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
---6óÒÇÃèÍçá
+--6Âàó„ÅÆÂ†¥Âêà
 SELECT FirstCol.name AS name1,
        MAX(CASE WHEN OtherCols.cnt = 2
                 THEN OtherCols.final_name

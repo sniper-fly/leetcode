@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Losses
@@ -44,7 +44,7 @@ INSERT INTO Policy_Criteria VALUES (4, 'B', 21);
 INSERT INTO Policy_Criteria VALUES (4, 'B', 22);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE LossDoneRight
@@ -98,7 +98,7 @@ HAVING COUNT(*) = (SELECT COUNT(*)
                     WHERE L1.cust_nbr = L2.cust_nbr);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT L1.cust_nbr, 'matches to ', C1.criteria_id,

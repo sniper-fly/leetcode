@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE CandidateSkills
@@ -23,19 +23,19 @@ VALUES (100, 'accounting'),
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-SELECT DISTINCT C1.candidate_id, 'job_id #212' -- édéñIDÉRÅ[ÉhÇÃíËêî
-  FROM CandidateSkills AS C1,            -- ÉXÉLÉã1Ç¬Ç…Ç¬Ç´1ÉeÅ[ÉuÉã
+SELECT DISTINCT C1.candidate_id, 'job_id #212' -- ‰ªï‰∫ãID„Ç≥„Éº„Éâ„ÅÆÂÆöÊï∞
+  FROM CandidateSkills AS C1,            -- „Çπ„Ç≠„É´1„Å§„Å´„Å§„Åç1„ÉÜ„Éº„Éñ„É´
        CandidateSkills AS C2,
        CandidateSkills AS C3
  WHERE C1.candidate_id = C2.candidate_id
    AND C1.candidate_id = C3.candidate_id
-   AND -- à»â∫Ç≈è–âÓàÀóäÇï\Ç∑éÆÇçÏÇÈ
+   AND -- ‰ª•‰∏ã„ÅßÁ¥π‰ªã‰æùÈ†º„ÇíË°®„ÅôÂºè„Çí‰Ωú„Çã
         (    C1.skill_code = 'manufacturing'
          AND C2.skill_code = 'inventory'
           OR C3.skill_code = 'accounting');
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE JobOrders
@@ -71,7 +71,7 @@ HAVING COUNT(*) >= (SELECT COUNT(*)
                        AND J1.job_id = J2.job_id);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT J1.job_id, C1.candidate_id

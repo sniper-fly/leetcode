@@ -1,14 +1,14 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡–â‘è•¶
+â– å•é¡Œæ–‡
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE PrinterControl
-(user_id CHAR(10), -- NULL‚Í‹ó‚«ƒvƒŠƒ“ƒ^‚ðˆÓ–¡‚·‚é
+(user_id CHAR(10), -- NULLã¯ç©ºããƒ—ãƒªãƒ³ã‚¿ã‚’æ„å‘³ã™ã‚‹
  printer_name CHAR(4) NOT NULL PRIMARY KEY,
  printer_description CHAR(40) NOT NULL);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì1
+â– ç­”ãˆãã®1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE PrinterControl
@@ -25,7 +25,7 @@ SELECT MIN(printer_name)
  WHERE :my_id BETWEEN user_id_start AND user_id_finish;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì2
+â– ç­”ãˆãã®2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT COALESCE(MIN(printer_name),
@@ -52,7 +52,7 @@ SELECT COALESCE(MAX(col), something_else)
  WHERE 1 = 2;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì3
+â– ç­”ãˆãã®3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT COALESCE(MIN(printer_name),
@@ -68,7 +68,7 @@ SELECT COALESCE(MIN(printer_name),
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE PrinterControl
-(user_id CHAR(10), -- NULL‚Í‹ó‚«ƒvƒŠƒ“ƒ^‚ðˆÓ–¡‚·‚é
+(user_id CHAR(10), -- NULLã¯ç©ºããƒ—ãƒªãƒ³ã‚¿ã‚’æ„å‘³ã™ã‚‹
  printer_name CHAR(4) NOT NULL PRIMARY KEY,
  assignable_flag CHAR(1) DEFAULT 'Y' NOT NULL
        CHECK (assignable_flag IN ('Y', 'N')),

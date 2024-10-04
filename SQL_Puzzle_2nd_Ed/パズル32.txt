@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE TaxAuthorities
@@ -16,7 +16,7 @@ CREATE TABLE TaxRates
  PRIMARY KEY (tax_authority, effect_date));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 (SELECT tax_authority
@@ -64,7 +64,7 @@ SELECT 'city2' AS city, '1994-11-01' AS effective_date,
  GROUP BY tax_authority, effect_date;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT SUM(T2.tax_rate)
@@ -78,7 +78,7 @@ SELECT SUM(T2.tax_rate)
            AND effect_date <= '1994-11-01');
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE TaxRates
@@ -87,7 +87,7 @@ CREATE TABLE TaxRates
  rgt INTEGER NOT NULL,
    CHECK (lft < rgt),
  start_date DATE NOT NULL,
- end_date DATE, -- NULLÇ»ÇÁÇŒåªç›ÇÃê≈ó¶Çà”ñ°Ç∑ÇÈ
+ end_date DATE, -- NULL„Å™„Çâ„Å∞ÁèæÂú®„ÅÆÁ®éÁéá„ÇíÊÑèÂë≥„Åô„Çã
  tax_rate DECIMAL(8,2) NOT NULL,
  PRIMARY KEY (tax_authority, start_date));
 

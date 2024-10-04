@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡–â‘è•¶
+â– å•é¡Œæ–‡
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE ServicesSchedule
@@ -11,15 +11,15 @@ CREATE TABLE ServicesSchedule
  PRIMARY KEY (shop_id, order_nbr, sch_seq));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì1
+â– ç­”ãˆãã®1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT S1.order_nbr, S1.sch_date,  S2.sch_date,
                 S3.sch_date
   FROM ServicesSchedule S1, ServicesSchedule S2,
        ServicesSchedule S3
- WHERE S1.service_type = :my_tos  -- ‹Æ–±ƒR[ƒh‚ðƒZƒbƒg‚·‚é
-   AND S1.order_nbr = :my_order   -- ’•¶”Ô†‚ðƒZƒbƒg‚·‚é
+ WHERE S1.service_type = :my_tos  -- æ¥­å‹™ã‚³ãƒ¼ãƒ‰ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
+   AND S1.order_nbr = :my_order   -- æ³¨æ–‡ç•ªå·ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
    AND S1.sch_seq = 1
    AND S2.order_nbr = S1.order_nbr
    AND S2.sch_seq = 2
@@ -27,7 +27,7 @@ SELECT DISTINCT S1.order_nbr, S1.sch_date,  S2.sch_date,
    AND S3.sch_seq = 3;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì2
+â– ç­”ãˆãã®2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT S0.order_nbr,
@@ -44,10 +44,10 @@ SELECT DISTINCT S0.order_nbr,
         WHERE S3.sch_seq =3
           AND S3.order_nbr = S0.order_nbr) AS confirmed
   FROM ServicesSchedule AS S0
- WHERE service_type = :my_tos ; -- ‹Æ–±ƒR[ƒh‚ðƒZƒbƒg‚·‚é
+ WHERE service_type = :my_tos ; -- æ¥­å‹™ã‚³ãƒ¼ãƒ‰ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì3
+â– ç­”ãˆãã®3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 INSERT INTO Work (order_nbr, processed, completed, confirmed)
@@ -55,19 +55,19 @@ SELECT order_nbr, sch_date, NULL, NULL
   FROM ServicesSchedule AS S1
  WHERE S1.sch_seq = 1
    AND S1.order_nbr = :my_order
-   AND service_type = :my_tos   -- ‹Æ–±ƒR[ƒh‚ðƒZƒbƒg
+   AND service_type = :my_tos   -- æ¥­å‹™ã‚³ãƒ¼ãƒ‰ã‚’ã‚»ãƒƒãƒˆ
 UNION ALL
 SELECT order_nbr, NULL, sch_date, NULL
   FROM ServicesSchedule AS S2
  WHERE S2.sch_seq = 2
    AND S2.order_nbr = :my_order
-   AND service_type = :my_tos   -- ‹Æ–±ƒR[ƒh‚ðƒZƒbƒg
+   AND service_type = :my_tos   -- æ¥­å‹™ã‚³ãƒ¼ãƒ‰ã‚’ã‚»ãƒƒãƒˆ
 UNION ALL
 SELECT order_nbr, NULL, NULL, sch_date
   FROM ServicesSchedule AS S3
  WHERE S3.sch_seq = 3
    AND S3.order_nbr = :my_order
-   AND service_type = :my_tos;  -- ‹Æ–±ƒR[ƒh‚ðƒZƒbƒg
+   AND service_type = :my_tos;  -- æ¥­å‹™ã‚³ãƒ¼ãƒ‰ã‚’ã‚»ãƒƒãƒˆ
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -76,7 +76,7 @@ SELECT order_nbr, MAX(processed), MAX(completed), MAX(confirmed)
  GROUP BY order_nbr;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì4
+â– ç­”ãˆãã®4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT order_nbr,

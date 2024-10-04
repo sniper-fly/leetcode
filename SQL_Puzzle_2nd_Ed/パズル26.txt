@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡–â‘è•¶
+â– å•é¡Œæ–‡
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE DataFlowDiagrams
@@ -9,7 +9,7 @@ CREATE TABLE DataFlowDiagrams
  PRIMARY KEY (diagram_name, bubble_name, flow_name));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì1
+â– ç­”ãˆãã®1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT diagram_name, bubble_name, flow_name
@@ -22,7 +22,7 @@ SELECT F3.diagram_name, F3.bubble_name, F3.flow_name
   FROM DataFlowDiagrams AS F3;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì2
+â– ç­”ãˆãã®2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT diagram_name, bubble_name, flow_name
@@ -38,16 +38,16 @@ SELECT DISTINCT diagram_name, bubble_name, flow_name
  ORDER BY diagram_name, bubble_name, flow_name;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì3
+â– ç­”ãˆãã®3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
--- ‚·‚×‚Ä‚Ìƒtƒ[‚ğ•Û‚·‚éƒrƒ…[
+-- ã™ã¹ã¦ã®ãƒ•ãƒ­ãƒ¼ã‚’ä¿æŒã™ã‚‹ãƒ“ãƒ¥ãƒ¼
 CREATE VIEW AllDFDFlows (flow_name)
 AS SELECT DISTINCT flow_name FROM DataFlowDiagrams;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
--- Œ³‚Ìƒe[ƒuƒ‹‚ÌŠes‚É‚·‚×‚Ä‚Ìƒtƒ[‚ğŠ„‚è“–‚Ä‚é
+-- å…ƒã®ãƒ†ãƒ¼ãƒ–ãƒ«ã®å„è¡Œã«ã™ã¹ã¦ã®ãƒ•ãƒ­ãƒ¼ã‚’å‰²ã‚Šå½“ã¦ã‚‹
 CREATE VIEW NewDFD
 (diagram_name, bubble_name, flow_name, missingflow)
 AS SELECT DISTINCT F1.diagram_name, F1.bubble_name, F1.flow_name,
@@ -57,8 +57,8 @@ AS SELECT DISTINCT F1.diagram_name, F1.bubble_name, F1.flow_name,
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
--- flow_name—ñ‚É¸‚í‚ê‚½ƒtƒ[‚ª‘¶İ‚µ‚È‚¢
--- (diagram_name, bubble_name) ‚Ì‘g‚İ‡‚í‚¹‚ğ•\¦‚·‚é
+-- flow_nameåˆ—ã«å¤±ã‚ã‚ŒãŸãƒ•ãƒ­ãƒ¼ãŒå­˜åœ¨ã—ãªã„
+-- (diagram_name, bubble_name) ã®çµ„ã¿åˆã‚ã›ã‚’è¡¨ç¤ºã™ã‚‹
 SELECT DISTINCT diagram_name, bubble_name, missingflow
   FROM NewDFD AS ND1
  WHERE NOT EXISTS (SELECT *

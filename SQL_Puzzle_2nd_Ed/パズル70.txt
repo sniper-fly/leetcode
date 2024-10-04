@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE StockHistory
@@ -11,7 +11,7 @@ CREATE TABLE StockHistory
  PRIMARY KEY (ticker_sym, sale_date));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 INSERT INTO StockHistory (ticker_sym, sale_date, closing_price)
@@ -24,7 +24,7 @@ INSERT INTO StockHistory (ticker_sym, sale_date, closing_price)
 VALUES ('XXX', '2000-04-02', 313.25);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 INSERT INTO StockHistory 
@@ -41,7 +41,7 @@ VALUES (:new_ticker_sym, :new_sale_date, :new_closing_price,
                         AND H2.sale_date < :new_sale_date))), 0));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 UPDATE StockHistory
@@ -73,7 +73,7 @@ CREATE TABLE StockHistory
  PRIMARY KEY (ticker_sym, sale_date));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Åyèâî≈ëÊ1ç¸åfç⁄î≈ Å¶â∫ÇÃèCê≥î≈ÇÇ≤égópÇ≠ÇæÇ≥Ç¢Åz
+„ÄêÂàùÁâàÁ¨¨1Âà∑Êé≤ËºâÁâà ‚Äª‰∏ã„ÅÆ‰øÆÊ≠£Áâà„Çí„Åî‰ΩøÁî®„Åè„Å†„Åï„ÅÑ„Äë
 CREATE VIEW StockTrends
 (ticker_sym, sale_date, closing_price, trend)
 AS SELECT H1.ticker_sym, H1.sale_date, H1.closing_price, 
@@ -86,7 +86,7 @@ AS SELECT H1.ticker_sym, H1.sale_date, H1.closing_price,
     GROUP BY H1.ticker_sym, H1.sale_date, H1.closing_price;
 
 
-ÅyèCê≥î≈Åz
+„Äê‰øÆÊ≠£Áâà„Äë
 CREATE VIEW StockTrends
 (ticker_sym, sale_date, closing_price, trend)
 AS SELECT ticker_sym, sale_date, closing_price,
@@ -103,7 +103,7 @@ AS SELECT ticker_sym, sale_date, closing_price,
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ4
+‚ñ†Á≠î„Åà„Åù„ÅÆ4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW StockTrends 

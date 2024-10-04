@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Accounts
@@ -55,7 +55,7 @@ SELECT A.acct_nbr,
        ON F.acct_nbr = B.acct_nbr;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT A.acct_nbr,
@@ -73,7 +73,7 @@ SELECT A.acct_nbr,
  GROUP BY A.acct_nbr;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT acct_nbr,
@@ -84,15 +84,15 @@ SELECT acct_nbr,
                 LEFT OUTER JOIN
                 (SELECT acct_nbr, foo_qty, 0 AS bar_qty
                    FROM Foo) AS F
-                ON A1.acct_nbr = F.acct_nbr) -- FooÇÃÉfÅ[É^
+                ON A1.acct_nbr = F.acct_nbr) -- Foo„ÅÆ„Éá„Éº„Çø
         UNION ALL
         (SELECT A2.acct_nbr, foo_qty, bar_qty
            FROM Accounts AS A2
                 LEFT OUTER JOIN
                 (SELECT acct_nbr, 0 AS foo_qty, bar_qty
                    FROM Bar) AS B
-                ON A2.acct_nbr = B.acct_nbr) -- BarÇÃÉfÅ[É^
-       ) AS X (acct_nbr, foo_qty, bar_qty) -- FooÇ∆BarÇ™1Ç¬Ç…
+                ON A2.acct_nbr = B.acct_nbr) -- Bar„ÅÆ„Éá„Éº„Çø
+       ) AS X (acct_nbr, foo_qty, bar_qty) -- Foo„Å®Bar„Åå1„Å§„Å´
  GROUP BY acct_nbr;
 
 

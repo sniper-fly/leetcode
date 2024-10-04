@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE SudokuGrid
@@ -22,21 +22,21 @@ SELECT D1.d, D2.d, D3.d,
                   CROSS JOIN Digits AS D3;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 BEGIN
-DELETE FROM SudokuGrid -- â°
+DELETE FROM SudokuGrid -- Ê®™
 WHERE :my_i = i
   AND :my_j <> j
   AND :my_val = val;
 
-DELETE FROM SudokuGrid -- èc
+DELETE FROM SudokuGrid -- Á∏¶
 WHERE :my_i <> i
   AND :my_j = j
   AND :my_val = val;
 
-DELETE FROM SudokuGrid -- ÉGÉäÉA
+DELETE FROM SudokuGrid -- „Ç®„É™„Ç¢
 WHERE i <> :my_i
   AND j <> :my_j
   AND region_nbr = 10 * ((:my_i + 2) / 3)
@@ -45,7 +45,7 @@ WHERE i <> :my_i
 END;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 DELETE FROM SudokuGrid
@@ -61,13 +61,13 @@ WHERE (((:my_i = i AND j <> :my_j)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 DELETE FROM SudokuGrid
- WHERE CASE WHEN :my_i = i AND :my_j = j   -- éÑÇΩÇøÇÃì¸óÕ
+ WHERE CASE WHEN :my_i = i AND :my_j = j   -- ÁßÅ„Åü„Å°„ÅÆÂÖ•Âäõ
             THEN 'Keep'
-            WHEN :my_i = i AND :my_j <> j  -- â°
+            WHEN :my_i = i AND :my_j <> j  -- Ê®™
             THEN 'Delete'
-            WHEN :my_i <> i AND :my_j = j  -- èc
+            WHEN :my_i <> i AND :my_j = j  -- Á∏¶
             THEN 'Delete'
-            WHEN i <> :my_i AND j <> :my_j -- ÉGÉäÉA
+            WHEN i <> :my_i AND j <> :my_j -- „Ç®„É™„Ç¢
                  AND region_nbr = 10 * (:my_i + 2) / 3)
                                   + (:my_j + 2) / 3)
             THEN 'Delete'
@@ -75,7 +75,7 @@ DELETE FROM SudokuGrid
    AND :my_val = val);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 DELETE FROM SudokuGrid
@@ -83,11 +83,11 @@ DELETE FROM SudokuGrid
             THEN 'Keep'
             WHEN :my_i = i AND :my_j = j AND my_val <> val
             THEN 'Delete'
-            WHEN :my_i = i AND :my_j <> j  -- â°
+            WHEN :my_i = i AND :my_j <> j  -- Ê®™
             THEN 'Delete'
-            WHEN :my_i <> i AND :my_j = j  -- èc
+            WHEN :my_i <> i AND :my_j = j  -- Á∏¶
             THEN 'Delete'
-            WHEN i <> :my_i AND j <> :my_j -- ÉGÉäÉA
+            WHEN i <> :my_i AND j <> :my_j -- „Ç®„É™„Ç¢
                  AND region_nbr = 10 * (:my_i + 2) / 3)
                                   + (:my_j + 2) / 3)
             THEN 'Delete'

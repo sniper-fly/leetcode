@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Production
@@ -10,7 +10,7 @@ CREATE TABLE Production
  PRIMARY KEY (production_center, wk_date, batch_nbr));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT production_center, wk_date, COUNT(batch_nbr),
@@ -19,7 +19,7 @@ SELECT production_center, wk_date, COUNT(batch_nbr),
  GROUP BY production_center, wk_date;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW Prod3 (production_center, wk_date, widget_cnt, third)
@@ -74,7 +74,7 @@ AS SELECT production_center, wk_date, 1, batch_nbr, widget_cnt
                            AND P1.wk_date = P2.wk_date);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT production_center, wk_date, third, COUNT(*),

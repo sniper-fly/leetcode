@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡–â‘è•¶
+â– å•é¡Œæ–‡
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Inventory
@@ -7,10 +7,10 @@ CREATE TABLE Inventory
  pieces INTEGER NOT NULL CHECK (pieces >= 0));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì2
+â– ç­”ãˆãã®2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-CREATE TABLE WorkingTable1 -- ŽåƒL[‚ðÝ’è‚Å‚«‚È‚¢I
+CREATE TABLE WorkingTable1 -- ä¸»ã‚­ãƒ¼ã‚’è¨­å®šã§ããªã„ï¼
 (goods CHAR(10) NOT NULL,
  pieces INTEGER NOT NULL);
 
@@ -59,7 +59,7 @@ SELECT *
 DELETE FROM WorkingTable1;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì3
+â– ç­”ãˆãã®3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Sequence (seq INTEGER PRIMARY KEY);
@@ -84,7 +84,7 @@ SELECT goods, 1 AS tally, seq
  WHERE I1.pieces >= S1.seq;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì4
+â– ç­”ãˆãã®4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 BEGIN
@@ -93,7 +93,7 @@ DECLARE increment INTEGER NOT NULL;
 
 INSERT INTO Sequence VALUES (1), (2);
 
--- Sequenceƒe[ƒuƒ‹‚Ìs”‚Íƒ‹[ƒv‚Ì‚½‚Ñ‚É”{‚É‚È‚é
+-- Sequenceãƒ†ãƒ¼ãƒ–ãƒ«ã®è¡Œæ•°ã¯ãƒ«ãƒ¼ãƒ—ã®ãŸã³ã«å€ã«ãªã‚‹
 SET maxnum = (SELECT MAX(pieces) FROM Inventory);
 SET increment = 2;
 
@@ -120,10 +120,10 @@ SELECT goods, 1 AS tally, seq
        <= (SELECT MAX(seq) FROM Sequence);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì5
+â– ç­”ãˆãã®5
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-CREATE TABLE Repetitions --ŽåƒL[‚È‚µ
+CREATE TABLE Repetitions --ä¸»ã‚­ãƒ¼ãªã—
 (pieces INTEGER NOT NULL,
  one INTEGER DEFAULT 1 NOT NULL
      CHECK (one = 1));

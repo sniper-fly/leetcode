@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-■問題文
+笆蝠城｡梧枚
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE FiscalYearTable1
@@ -11,10 +11,10 @@ CREATE TABLE FiscalYearTable1
 
 (SELECT f1.fiscal_year
    FROM FiscalYearTable1 AS F1
-  WHERE <任意の日付データ> BETWEEN F1.start_date AND F1.end_date)
+  WHERE <莉ｻ諢上�ｮ譌･莉倥ョ繝ｼ繧ｿ> BETWEEN F1.start_date AND F1.end_date)
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-■答えその1
+笆遲斐∴縺昴�ｮ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE FiscalYearTable1

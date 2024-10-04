@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡–â‘è•¶
+â– å•é¡Œæ–‡
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Hotel
@@ -11,7 +11,7 @@ CREATE TABLE Hotel
  CHECK (departure_date >= arrival_date));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì1
+â– ç­”ãˆãã®1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Hotel
@@ -29,7 +29,7 @@ CREATE TABLE Hotel
                                      AND H2.departure_date)));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì2
+â– ç­”ãˆãã®2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Hotel
@@ -39,7 +39,7 @@ CREATE TABLE Hotel
  PRIMARY KEY (room_nbr, occupy_date, guest_name));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì3
+â– ç­”ãˆãã®3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW HotelStays
@@ -58,16 +58,16 @@ AS SELECT room_nbr, arrival_date, departure_date, guest_name
 
 INSERT INTO HotelStays
 VALUES (1, '2008-01-01', '2008-01-03', 'Coe');
--- HotelStaysƒrƒ…[‚É‚ÍCoeŽ‚¾‚¯‚ª•\Ž¦‚³‚ê‚é
+-- HotelStaysãƒ“ãƒ¥ãƒ¼ã«ã¯Coeæ°ã ã‘ãŒè¡¨ç¤ºã•ã‚Œã‚‹
 
 INSERT INTO HotelStays
 VALUES (1, '2008-01-03', '2008-01-05', 'Doe');
--- HotelStaysƒrƒ…[‚É‚ÍCoeŽ‚Ì‚Ù‚©ADoeŽ‚à•\Ž¦‚³‚ê‚é
+-- HotelStaysãƒ“ãƒ¥ãƒ¼ã«ã¯Coeæ°ã®ã»ã‹ã€Doeæ°ã‚‚è¡¨ç¤ºã•ã‚Œã‚‹
 
 INSERT INTO HotelStays
 VALUES (1, '2008-01-02', '2008-01-05', 'Roe');
--- RoeŽ‚Ì—\–ñiINSERTj‚ÍŽ¸”s‚µA
--- HotelStaysƒrƒ…[‚É‚ÍCoeŽ‚µ‚©•\Ž¦‚³‚ê‚È‚¢
+-- Roeæ°ã®äºˆç´„ï¼ˆINSERTï¼‰ã¯å¤±æ•—ã—ã€
+-- HotelStaysãƒ“ãƒ¥ãƒ¼ã«ã¯Coeæ°ã—ã‹è¡¨ç¤ºã•ã‚Œãªã„
 
 
 

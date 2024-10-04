@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡–â‘è•¶
+â– å•é¡Œæ–‡
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE FUNCTION Barcode_CheckSum(IN my_barcode CHAR(12))
@@ -11,20 +11,20 @@ RETURNS INTEGER
 
   SET barcode_checkres = 0;
 
-  -- —^‚¦‚ç‚ê‚½ƒo[ƒR[ƒh‚ª”’l‚©ƒ`ƒFƒbƒN‚·‚é
+  -- ä¸Žãˆã‚‰ã‚ŒãŸãƒãƒ¼ã‚³ãƒ¼ãƒ‰ãŒæ•°å€¤ã‹ãƒã‚§ãƒƒã‚¯ã™ã‚‹
   IF IsNumeric(my_barcode) = 0
   THEN RETURN -1;
   END IF;
 
-  -- ƒo[ƒR[ƒh‚Ì’·‚³‚ðƒ`ƒFƒbƒN‚·‚é
+  -- ãƒãƒ¼ã‚³ãƒ¼ãƒ‰ã®é•·ã•ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
   IF CHAR_LENGTH(TRIM(BOTH ' ' FROM my_barcode)) <> 12
   THEN RETURN -2;
   END IF;
 
-  -- ƒo[ƒR[ƒh‚Ìƒ`ƒFƒbƒNƒTƒ€‚ðŒvŽZ‚·‚é
+  -- ãƒãƒ¼ã‚³ãƒ¼ãƒ‰ã®ãƒã‚§ãƒƒã‚¯ã‚µãƒ ã‚’è¨ˆç®—ã™ã‚‹
   SET idx = 1;
   WHILE idx <= 12
-  DO -- ”Žš‚Ì•„†‚ð‹‚ß‚é
+  DO -- æ•°å­—ã®ç¬¦å·ã‚’æ±‚ã‚ã‚‹
 
     IF MOD(idx, 2) = 0
        THEN SET sgn = -1;
@@ -37,12 +37,12 @@ RETURNS INTEGER
     SET idx = idx + 1;
   END WHILE;
 
-  -- ƒ`ƒFƒbƒNƒfƒBƒWƒbƒg
+  -- ãƒã‚§ãƒƒã‚¯ãƒ‡ã‚£ã‚¸ãƒƒãƒˆ
   RETURN ABS(MOD(barcode_checkres, 10));
 END;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì2
+â– ç­”ãˆãã®2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE FUNCTION Barcode_CheckSum(IN barcode CHAR(12))
@@ -60,7 +60,7 @@ BEGIN
 END;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì3
+â– ç­”ãˆãã®3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE FUNCTION Barcode_CheckSum(IN barcode CHAR(12))
@@ -89,7 +89,7 @@ RETURN
     WHERE barcode NOT SIMILAR TO '%[^0-9]%');
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì4
+â– ç­”ãˆãã®4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Products

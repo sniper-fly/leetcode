@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Pensions
@@ -10,25 +10,25 @@ CREATE TABLE Pensions
  earnings DECIMAL(8,2) DEFAULT 0.00 NOT NULL);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW PenPeriods (sin, start_year, end_year, earnings_tot)
 AS SELECT P0.sin, P0.pen_year, P1.pen_year,
-          (SELECT SUM(earnings) -- ä˙ä‘íPà ÇÃëçé˚ì¸
+          (SELECT SUM(earnings) -- ÊúüÈñìÂçò‰Ωç„ÅÆÁ∑èÂèéÂÖ•
              FROM Pensions AS P2
             WHERE P2.sin = P0.sin
               AND P2.pen_year BETWEEN P0.pen_year
                                   AND P1.pen_year)
      FROM Pensions AS P0, Pensions AS P1
-    WHERE P1.sin = P0.sin -- éxï•ä˙ä‘ÇçÏÇÈÇΩÇﬂÇÃé©å»åãçá
+    WHERE P1.sin = P0.sin -- ÊîØÊâïÊúüÈñì„Çí‰Ωú„Çã„Åü„ÇÅ„ÅÆËá™Â∑±ÁµêÂêà
       AND P1.pen_year >= (P0.pen_year - 4)
-      AND 0 < ALL (SELECT month_cnt        -- òAë±Ç∑ÇÈåé
+      AND 0 < ALL (SELECT month_cnt        -- ÈÄ£Á∂ö„Åô„ÇãÊúà
                      FROM Pensions AS P3
                     WHERE P3.sin = P0.sin
                       AND P3.pen_year BETWEEN P0.pen_year
                                           AND P1.pen_year)
-      AND 60 <= (SELECT SUM(month_cnt)    -- 60Éñåéà»è„
+      AND 60 <= (SELECT SUM(month_cnt)    -- 60„É∂Êúà‰ª•‰∏ä
                    FROM Pensions AS P4
                   WHERE P4.sin = P0.sin
                     AND P4.pen_year BETWEEN P0.pen_year
@@ -43,7 +43,7 @@ SELECT *
                     WHERE P1.sin = P0.sin);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT P0.sin,
@@ -63,7 +63,7 @@ HAVING SUM(P1.month_cnt) >= 60
    AND (P2.pen_year - P0.pen_year) = (COUNT(*) - 1);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT P0.sin, P0.end_year,

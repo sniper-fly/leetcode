@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡–â‘è•¶
+â– å•é¡Œæ–‡
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE WidgetInventory
@@ -26,7 +26,7 @@ SELECT SUM(unit_price * qty_on_hand) / SUM(qty_on_hand)
   FROM WidgetInventory;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì1
+â– ç­”ãˆãã®1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW LIFO
@@ -69,7 +69,7 @@ SELECT (tot_cost - ((tot_qty_on_hand - :order_qty)
                       WHERE tot_qty_on_hand >= :order_qty);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì2
+â– ç­”ãˆãã®2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT SUM(W3.v) AS cost
@@ -87,7 +87,7 @@ SELECT SUM(W3.v) AS cost
   ) AS W3(v);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì3
+â– ç­”ãˆãã®3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW StockLevels (purchase_date, previous_qty,current_qty)
@@ -131,14 +131,14 @@ UPDATE WidgetInventory
          END;
 END IF;
 
--- •”•i‚Ìd“ü”‚ª0‚É‚È‚Á‚½“ú‚Ìs‚ğíœ‚·‚é
+-- éƒ¨å“ã®ä»•å…¥æ•°ãŒ0ã«ãªã£ãŸæ—¥ã®è¡Œã‚’å‰Šé™¤ã™ã‚‹
 DELETE FROM WidgetInventory
  WHERE qty_on_hand = 0;
 
 END;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì4
+â– ç­”ãˆãã®4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Picklists

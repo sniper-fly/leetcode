@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Samples
@@ -7,7 +7,7 @@ CREATE TABLE Samples
  load REAL NOT NULL);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Samples
@@ -28,7 +28,7 @@ SET moving_avg
                  (Samples.sample_time - INTERVAL '45' MINUTE)));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 UPDATE Samples
@@ -40,7 +40,7 @@ UPDATE Samples
                      AND Samples.sample_time);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT S1.sample_time, AVG(S2.load) AS avg_prev_hour_load
@@ -50,7 +50,7 @@ SELECT S1.sample_time, AVG(S2.load) AS avg_prev_hour_load
  GROUP BY S1.sample_time;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ4
+‚ñ†Á≠î„Åà„Åù„ÅÆ4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT *

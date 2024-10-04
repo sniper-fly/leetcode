@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-����蕶
+■問題文
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Portfolios
@@ -11,12 +11,12 @@ CREATE TABLE Portfolios
    REFERENCES Portfolios(file_id));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-����������1
+■答えその1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Portfolios
 (file_id INTEGER NOT NULL PRIMARY KEY,
- ���̂ق��̗� ...);
+ そのほかの列 ...);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -31,7 +31,7 @@ CREATE TABLE Succession
 
 CREATE TABLE Portfolios
 (file_id INTEGER NOT NULL PRIMARY KEY,
- stuff CHAR(15) NOT NULL);  -- �t�@�C���̖��O
+ stuff CHAR(15) NOT NULL);  -- ファイルの名前
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -93,15 +93,15 @@ SELECT S1.file_id, ' superseded ', S2.file_id,
   FROM Succession AS S1, Succession AS S2
  WHERE S1.chain = S2.chain
    AND S1.next = S2.next + 1
-   AND S1.file_id = :my_file_id; -- ���ׂẴo�[�W�����ɂ��Ē��ׂ����̂Ȃ�A���̏����͍폜����
+   AND S1.file_id = :my_file_id; -- すべてのバージョンについて調べたいのなら、この条件は削除する
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 BEGIN
--- �V�K�o�[�W�����̂��߂̍s�����
+-- 新規バージョンのための行を作る
 INSERT INTO Portfolios VALUES (1000, 'sticky stuff');
 
--- �A���̒��̔C�ӂ�old_file_id��new_file_id�Ƃ��Ēǉ�����
+-- 連鎖の中の任意のold_file_idをnew_file_idとして追加する
 INSERT INTO Succession (chain, next, file_id, suc_date)
 VALUES ((SELECT DISTINCT chain
            FROM Succession AS S1

@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-����蕶
+■問題文
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT *
@@ -16,10 +16,10 @@ SELECT *
  ORDER BY U1.unit_nbr, RP1.payment_date;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-����������1
+■答えその1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-SELECT *   -- ���ۂɎg���Ƃ��́A�K�v�ȗ񂾂��w�肷�邱��
+SELECT *   -- 実際に使うときは、必要な列だけ指定すること
   FROM (Units AS U1 LEFT OUTER JOIN Tenants AS T1
          ON U1.unit_nbr = T1.unit_nbr
         AND T1.vacated_date IS NULL

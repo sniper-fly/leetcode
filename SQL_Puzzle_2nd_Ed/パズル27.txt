@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE SupParts
@@ -8,7 +8,7 @@ CREATE TABLE SupParts
  PRIMARY KEY (sno, pno));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT SP1.sno, SP2.sno
@@ -24,7 +24,7 @@ SELECT DISTINCT SP1.sno, SP2.sno
     OR SP2.sno IS NULL;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT SP1.sno, SP2.sno
@@ -38,13 +38,13 @@ SELECT DISTINCT SP1.sno, SP2.sno
                     WHERE SP11.sno = SP1.sno);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT SP1.sno, SP2.sno
   FROM SupParts AS SP1, SupParts AS SP2
  WHERE SP1.sno < SP2.sno
-   AND NOT EXISTS  -- SP1Ç…ÇÕÇ†ÇÈÇ™SP2Ç…ÇÕÇ»Ç¢ïîïi
+   AND NOT EXISTS  -- SP1„Å´„ÅØ„ÅÇ„Çã„ÅåSP2„Å´„ÅØ„Å™„ÅÑÈÉ®ÂìÅ
              (SELECT SP3.pno
                 FROM SupParts AS SP3
                WHERE SP1.sno = SP3.sno
@@ -52,7 +52,7 @@ SELECT DISTINCT SP1.sno, SP2.sno
                        (SELECT pno
                           FROM SupParts AS SP4
                          WHERE SP2.sno = SP4.sno))
-   AND NOT EXISTS  -- SP2Ç…ÇÕÇ†ÇÈÇ™SP1Ç…ÇÕÇ»Ç¢ïîïi
+   AND NOT EXISTS  -- SP2„Å´„ÅØ„ÅÇ„Çã„ÅåSP1„Å´„ÅØ„Å™„ÅÑÈÉ®ÂìÅ
              (SELECT SP5.pno
                 FROM SupParts AS SP5
                WHERE SP2.sno = SP5.sno
@@ -62,7 +62,7 @@ SELECT DISTINCT SP1.sno, SP2.sno
                          WHERE SP1.sno = SP4.sno));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ4
+‚ñ†Á≠î„Åà„Åù„ÅÆ4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT SP1.sno, SP2.sno
@@ -71,7 +71,7 @@ SELECT SP1.sno, SP2.sno
    AND SP1.sno < SP2.sno
  GROUP BY SP1.sno, SP2.sno
 HAVING COUNT(*) =
-  (SELECT COUNT(*) -- 1ëŒ1ÇÃëŒâûÇ™ë∂ç›Ç∑ÇÈÇ©î€Ç©ÇÃÉeÉXÉg
+  (SELECT COUNT(*) -- 1ÂØæ1„ÅÆÂØæÂøú„ÅåÂ≠òÂú®„Åô„Çã„ÅãÂê¶„Åã„ÅÆ„ÉÜ„Çπ„Éà
      FROM SupParts AS SP3
     WHERE SP3.sno = SP1.sno)
    AND COUNT(*) =
@@ -80,7 +80,7 @@ HAVING COUNT(*) =
        WHERE SP4.sno = SP2.sno);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ5
+‚ñ†Á≠î„Åà„Åù„ÅÆ5
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT SP1.sno, SP2.sno
@@ -98,13 +98,13 @@ HAVING COUNT(SP1.sno || SP2.sno) = (SELECT COUNT(pno)
                                      WHERE SP3.sno = SP1.sno);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ6
+‚ñ†Á≠î„Åà„Åù„ÅÆ6
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT SP1.sno, SP2.sno
   FROM SupParts AS SP1, SupParts AS SP2
  WHERE SP1.sno < SP2.sno
-   AND NOT EXISTS  -- SP1Ç…ÇÕÇ†ÇÈÇ™SP2Ç…ÇÕÇ»Ç¢ïîïi
+   AND NOT EXISTS  -- SP1„Å´„ÅØ„ÅÇ„Çã„ÅåSP2„Å´„ÅØ„Å™„ÅÑÈÉ®ÂìÅ
              (SELECT SP3.pno
                 FROM SupParts AS SP3
                WHERE SP1.sno = SP3.sno
@@ -112,7 +112,7 @@ SELECT DISTINCT SP1.sno, SP2.sno
               SELECT SP4.pno
                 FROM SupParts AS SP4
                WHERE SP2.sno = SP4.sno)
-   AND NOT EXISTS  -- SP2Ç…ÇÕÇ†ÇÈÇ™SP1Ç…ÇÕÇ»Ç¢ïîïi
+   AND NOT EXISTS  -- SP2„Å´„ÅØ„ÅÇ„Çã„ÅåSP1„Å´„ÅØ„Å™„ÅÑÈÉ®ÂìÅ
              (SELECT SP5.pno
                 FROM SupParts AS SP5
                WHERE SP2.sno = SP5.sno
@@ -122,7 +122,7 @@ SELECT DISTINCT SP1.sno, SP2.sno
                WHERE SP1.sno = SP6.sno);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ7
+‚ñ†Á≠î„Åà„Åù„ÅÆ7
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT A.sno AS sno1, B.sno AS sno2
@@ -133,13 +133,13 @@ SELECT A.sno AS sno1, B.sno AS sno2
        (SELECT sno, COUNT(*), MIN(pno), MAX(pno)
           FROM SupParts GROUP BY sno)
        AS B(sno, cnt, min_pno, max_pno)
-  -- à»â∫ÇÃ4Ç¬ÇÃèåèÇ≈ÇŸÇ∆ÇÒÇ«ÇÃëgÇ›çáÇÌÇπÇ™èúäOÇ≥ÇÍÇÈ
+  -- ‰ª•‰∏ã„ÅÆ4„Å§„ÅÆÊù°‰ª∂„Åß„Åª„Å®„Çì„Å©„ÅÆÁµÑ„ÅøÂêà„Çè„Åõ„ÅåÈô§Â§ñ„Åï„Çå„Çã
        ON A.cnt = B.cnt
       AND A.min_pno = B.min_pno
       AND A.max_pno = B.max_pno
       AND A.sno < B.sno
-  -- à»â∫ÇÃçÇÉRÉXÉgÇ»SELECTï∂ÇÕÅAÇ∑Ç◊ÇƒÇÃëgÇ›çáÇÌÇπÇ…Ç¬Ç¢Çƒ
-  -- é¿çsÇ∑ÇÈïKóvÇÕÇ»Ç¢
+  -- ‰ª•‰∏ã„ÅÆÈ´ò„Ç≥„Çπ„Éà„Å™SELECTÊñá„ÅØ„ÄÅ„Åô„Åπ„Å¶„ÅÆÁµÑ„ÅøÂêà„Çè„Åõ„Å´„Å§„ÅÑ„Å¶
+  -- ÂÆüË°å„Åô„ÇãÂøÖË¶Å„ÅØ„Å™„ÅÑ
  WHERE A.cnt
         = (SELECT COUNT(*)
              FROM SupParts AS A1,
@@ -149,10 +149,10 @@ SELECT A.sno AS sno1, B.sno AS sno2
               AND B1.sno = B.sno);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ8
+‚ñ†Á≠î„Åà„Åù„ÅÆ8
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-SELECT DISTINCT 'not equal'  -- 'ìôÇµÇ≠Ç»Ç¢'
+SELECT DISTINCT 'not equal'  -- 'Á≠â„Åó„Åè„Å™„ÅÑ'
   FROM ((SELECT * FROM  A
          UNION
          SELECT * FROM  B)

@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Personnel
@@ -18,7 +18,7 @@ CREATE TABLE Phones
  FOREIGN KEY (emp_id) REFERENCES Personnel(emp_id));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE VIEW HomePhones
@@ -51,7 +51,7 @@ SELECT COALESCE(H1.last_name, F1.last_name),
     ON H1.emp_id = F1.emp_id;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT E1.last_name, E1.first_name, H1.phone_nbr AS Home,
@@ -64,7 +64,7 @@ SELECT E1.last_name, E1.first_name, H1.phone_nbr AS Home,
            AND F1.phone_type = 'fax';
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT E1.emp_id, E1.first_name, E1.last_name,
@@ -79,7 +79,7 @@ SELECT E1.emp_id, E1.first_name, E1.last_name,
  GROUP BY E1.emp_id, E1.first_name, E1.last_name;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ4
+‚ñ†Á≠î„Åà„Åù„ÅÆ4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT P1.last_name, P1.first_name,

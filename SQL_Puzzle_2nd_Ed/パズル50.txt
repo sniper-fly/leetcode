@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE AnthologyContributors
@@ -10,7 +10,7 @@ CREATE TABLE AnthologyContributors
  PRIMARY KEY (isbn, contributor));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT isbn, contributor, :cat_1, :cat_2, :cat_3
@@ -28,22 +28,22 @@ SELECT contributor, :cat_1, :cat_2, :cat_3
 HAVING COUNT(DISTINCT A1.category) = 2;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT A1.isbn, A1.contributor, :cat_1, :cat_2
   FROM AnthologyContributors AS A1,
        AnthologyContributors AS A2
- WHERE A1.contributor = A2.contributor -- é©å»åãçá
-   AND A1.category = :cat_1 -- 1ÅFï™ñÏ1
-   AND A2.category = :cat_2 -- 2ÅFï™ñÏ2
-   AND NOT EXISTS (SELECT * -- 3ÅFÇµÇ©ÇµÅAï™ñÏ3Ç…ÇÕé∑ïMÇµÇƒÇ¢Ç»Ç¢
+ WHERE A1.contributor = A2.contributor -- Ëá™Â∑±ÁµêÂêà
+   AND A1.category = :cat_1 -- 1ÔºöÂàÜÈáé1
+   AND A2.category = :cat_2 -- 2ÔºöÂàÜÈáé2
+   AND NOT EXISTS (SELECT * -- 3Ôºö„Åó„Åã„Åó„ÄÅÂàÜÈáé3„Å´„ÅØÂü∑Á≠Ü„Åó„Å¶„ÅÑ„Å™„ÅÑ
                      FROM AnthologyContributors AS A3
                     WHERE A1.contributor = A3.contributor
                       AND A3.category = :cat_3);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT isbn, contributor, :cat_1, :cat_2, :cat_3
@@ -76,7 +76,7 @@ SELECT isbn, contributor, :cat_1
            AND A1.category <> A2.category);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ4
+‚ñ†Á≠î„Åà„Åù„ÅÆ4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT contributor, :cat_1, :cat_2, :cat_3
@@ -87,7 +87,7 @@ SELECT DISTINCT contributor, :cat_1, :cat_2, :cat_3
                AND A2.category IN (:cat_1, :cat_2, :cat_3));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ5
+‚ñ†Á≠î„Åà„Åù„ÅÆ5
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT contributor, :cat_1, :cat_2
@@ -118,7 +118,7 @@ HAVING (SELECT SUM(DISTINCT
                         THEN -3 ELSE NULL END)) = 3;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ6
+‚ñ†Á≠î„Åà„Åù„ÅÆ6
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT contributor, :cat_1, :cat_2, :cat_3

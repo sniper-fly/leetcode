@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ñ‚ëËï∂
+‚ñ†ÂïèÈ°åÊñá
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Tickets
@@ -18,7 +18,7 @@ VALUES ('a', 2), ('a', 3), ('a', 4),
        ('e', 10);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ1
+‚ñ†Á≠î„Åà„Åù„ÅÆ1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT buyer_name
@@ -29,16 +29,16 @@ HAVING NOT (MAX(ticket_nbr) - MIN(ticket_nbr) <= COUNT(*));
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT T1.buyer_name, S1.seq
-  FROM Tickets AS T1, Sequence AS S1  -- SequenceÅFòAî‘ÉeÅ[ÉuÉã
- WHERE seq <= (SELECT MAX(ticket_nbr) -- èWçáÇÃîÕàÕÇê›íËÇ∑ÇÈ
+  FROM Tickets AS T1, Sequence AS S1  -- SequenceÔºöÈÄ£Áï™„ÉÜ„Éº„Éñ„É´
+ WHERE seq <= (SELECT MAX(ticket_nbr) -- ÈõÜÂêà„ÅÆÁØÑÂõ≤„ÇíË®≠ÂÆö„Åô„Çã
                  FROM Tickets AS T2
                 WHERE T1.buyer_name = T2.buyer_name)
-   AND seq NOT IN (SELECT ticket_nbr  -- åáî‘ÇãÅÇﬂÇÈ
+   AND seq NOT IN (SELECT ticket_nbr  -- Ê¨†Áï™„ÇíÊ±Ç„ÇÅ„Çã
                      FROM Tickets AS T3
                     WHERE T1.buyer_name = T3.buyer_name);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ2
+‚ñ†Á≠î„Åà„Åù„ÅÆ2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT T1.buyer_name, S1.seq
@@ -53,7 +53,7 @@ SELECT DISTINCT T1.buyer_name, S1.seq
                    WHERE T3.buyer_name = T1.buyer_name);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ3
+‚ñ†Á≠î„Åà„Åù„ÅÆ3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT DISTINCT T2.buyer_name, T2.ticket_nbr
@@ -69,7 +69,7 @@ SELECT DISTINCT T2.buyer_name, T2.ticket_nbr
  WHERE T3.ticket_nbr IS NULL;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ4
+‚ñ†Á≠î„Åà„Åù„ÅÆ4
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT buyer_name, (prev_nbr + 1) AS gap_start,
@@ -83,7 +83,7 @@ SELECT buyer_name, (prev_nbr + 1) AS gap_start,
  WHERE (ticket_nbr - prev_nbr) > 1;
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Å°ìöÇ¶ÇªÇÃ5
+‚ñ†Á≠î„Åà„Åù„ÅÆ5
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 WITH CTE(buyer_name, ticket_nbr)

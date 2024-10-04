@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡–â‘è•¶
+â– å•é¡Œæ–‡
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 CREATE TABLE Projects
@@ -7,11 +7,11 @@ CREATE TABLE Projects
  step_nbr INTEGER NOT NULL
      CHECK (step_nbr BETWEEN 0 AND 1000),
  step_status CHAR(1) NOT NULL
-     CHECK (step_status IN ('C', 'W')), -- C‚ÍŠ®—¹AW‚Í‘Ò‹@
+     CHECK (step_status IN ('C', 'W')), -- Cã¯å®Œäº†ã€Wã¯å¾…æ©Ÿ
  PRIMARY KEY (workorder_id, step_nbr));
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì1
+â– ç­”ãˆãã®1
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT workorder_id
@@ -24,7 +24,7 @@ SELECT workorder_id
                      AND P1.workorder_id = P2.workorder_id);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì2
+â– ç­”ãˆãã®2
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT workorder_id
@@ -44,19 +44,19 @@ HAVING SUM(SIGN(step_nbr) * POSITION('W' IN step_status)
        = COUNT(step_nbr);
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-¡“š‚¦‚»‚Ì3
+â– ç­”ãˆãã®3
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 SELECT workorder_id
   FROM Projects
  GROUP BY workorder_id
-HAVING COUNT(*)     -- ‚ ‚éworkorder_id‚É‚Â‚¢‚Ä‚Ì‘Ss”
+HAVING COUNT(*)     -- ã‚ã‚‹workorder_idã«ã¤ã„ã¦ã®å…¨è¡Œæ•°
         = COUNT(CASE WHEN step_nbr = 0 AND step_status = 'C'
                      THEN 1
-                     ELSE NULL END)  -- 0”Ô‚ÅuŠ®—¹v‚Ìs”
+                     ELSE NULL END)  -- 0ç•ªã§ã€Œå®Œäº†ã€ã®è¡Œæ•°
         + COUNT(CASE WHEN step_nbr <> 0 AND step_status = 'W'
                      THEN 1
-                     ELSE NULL END); -- 0”ÔˆÈŠO‚Åu‘Ò‹@v‚Ìs”
+                     ELSE NULL END); -- 0ç•ªä»¥å¤–ã§ã€Œå¾…æ©Ÿã€ã®è¡Œæ•°
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
