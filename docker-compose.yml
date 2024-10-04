@@ -1,0 +1,19 @@
+services:
+  db:
+    container_name: sql-puzzle
+    image: mysql:8.0-debian
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: puzzle
+      MYSQL_DATABASE: puzzle
+      MYSQL_USER: puzzle
+      MYSQL_PASSWORD: puzzle
+      MYSQL_PORT: 3306
+    cap_add:
+      - SYS_NICE
+    volumes:
+      - sql-puzzle:/var/lib/mysql
+
+volumes:
+  sql-puzzle:
